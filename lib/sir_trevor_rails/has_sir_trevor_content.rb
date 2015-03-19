@@ -19,7 +19,7 @@ module SirTrevorRails
           content = read_attribute(attribute)
           return SirTrevorRails::BlockArray.new if content.blank?
           instance_variable_get("@#{attribute}") ||
-            instance_variable_set("@#{attribute}", SirTrevorRails::BlockArray.from_json(content, self))
+            instance_variable_set("@#{attribute}", content.is_a?(String) ? SirTrevorRails::BlockArray.from_json(content, self) : SirTrevorRails::BlockArray.from_hash(content, self))
         end
       end
     end

@@ -4,7 +4,7 @@ module SirTrevorRails
   class Block < OpenStruct
 
     def self.from_hash(hash, parent)
-      hash = hash.deep_dup
+      hash = hash.deep_dup.symbolize_keys
       self.type_klass(hash).new(hash, parent)
     end
 
