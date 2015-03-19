@@ -44,6 +44,8 @@ In your models pass the attribute name of your Sir Trevor content to `sir_trevor
 sir_trevor_content :content
 ```
 
+The attribute in your model can be a `String` or `Hash` data type.
+
 In your view files, call render to display the Sir Trevor content
 
 ```ruby
